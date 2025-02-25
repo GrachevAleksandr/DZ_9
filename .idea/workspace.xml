@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d281833a-7407-4719-819c-9509dadc1c24" name="Changes" comment="" />
+    <list default="true" id="d281833a-7407-4719-819c-9509dadc1c24" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +42,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.mask.executor&quot;: &quot;Run&quot;,
+    &quot;Python.widget.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
