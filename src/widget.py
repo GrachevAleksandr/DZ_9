@@ -12,6 +12,13 @@ def mask_account_card(account_card: str) -> str:
     else:
         card[-1] = get_mask_card_number(card[-1])
         return " ".join(card)  # Visa Classic 6831 98** **** 7658
+# def mask_account_card(account_card: str) -> str:
+#     name, number = account_card.rsplit(maxsplit=1)
+#     if name.lower().startswith('счет'):
+#         hidden_number = get_mask_account(number)
+#     else:
+#         hidden_number = get_mask_card_number(number)
+#     return f"{name} {hidden_number}"
 
 
 def get_date(date: str) -> str:
@@ -21,11 +28,3 @@ def get_date(date: str) -> str:
     """
     return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
 
-
-# account_card = 'Maestro 1596837868705199'
-account_card = "Счет 64686473678894779589"
-# account_card = "MasterCard 7158300734726758"
-# account_card = Счет 35383033474447895560
-# account_card = "Visa Classic 6831982476737658"
-n = mask_account_card(account_card)
-print(n)
