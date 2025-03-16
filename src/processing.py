@@ -4,7 +4,7 @@ def filter_by_state(list_state: list, state: str = "EXECUTED") -> list:
     'EXECUTED'). Функция возвращает новый список словарей, содержащий только те словари,
     у которых ключ state соответствует указанному значению.
     """
-    if len(list_state) == 0:  # Проверка на пустую строку
+    if not list_state:  # Проверка на пустую строку
         raise ValueError("Нет данных")
     new_list = []
     for element in list_state:
