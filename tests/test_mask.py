@@ -26,6 +26,11 @@ def test_mask_account_invalid() -> None:
         get_mask_account("3643y9n67r25k93i64l8")
 
 
+def test_mask_account_invalid_none() -> None:
+    with pytest.raises(ValueError):
+        get_mask_account("")
+
+
 @pytest.mark.parametrize(
     "account, expected",
     [
@@ -45,3 +50,8 @@ def test_mask_card_number_invalid_account() -> None:
 def test_mask_card_number_invalid() -> None:
     with pytest.raises(ValueError):
         get_mask_account("37l00792s89606361")
+
+
+def test_mask_card_number_invalid_none() -> None:
+    with pytest.raises(ValueError):
+        get_mask_card_number("")
