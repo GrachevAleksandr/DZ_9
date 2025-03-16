@@ -5,6 +5,8 @@ def mask_account_card(account_card: str) -> str:
     """
     которая умеет маскировать информацию как о картах, так и о счетах.
     """
+    if len(account_card) == 0:  # Проверка на пустую строку
+        raise ValueError("Нет данных")
     card = account_card.split()  # ['Visa', 'Classic', '1234567890123456']
     if len(card[-1]) == 20:
         card[-1] = get_mask_account(card[-1])
