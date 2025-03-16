@@ -1,6 +1,3 @@
-from mypy.types import AnyType
-
-
 def filter_by_state(list_state: list, state: str = "EXECUTED") -> list:
     """
     принимает список словарей и опционально значение для ключа state(по умолчанию
@@ -29,4 +26,3 @@ def sort_by_date(list_state: list, reverse: bool = True) -> list:
         return sorted(list_state, key=lambda x: x["date"], reverse=True)
     else:
         return sorted(list_state, key=lambda x: x["date"])
-
