@@ -5,6 +5,8 @@ def mask_account_card(account_card: str) -> str:
     """
     которая умеет маскировать информацию как о картах, так и о счетах.
     """
+    if len(account_card) == 0:  # Проверка на пустую строку
+        raise ValueError("Нет данных")
     card = account_card.split()  # ['Visa', 'Classic', '1234567890123456']
     if len(card[-1]) == 20:
         card[-1] = get_mask_account(card[-1])
@@ -12,6 +14,8 @@ def mask_account_card(account_card: str) -> str:
     else:
         card[-1] = get_mask_card_number(card[-1])
         return " ".join(card)  # Visa Classic 6831 98** **** 7658
+
+
 # def mask_account_card(account_card: str) -> str:
 #     name, number = account_card.rsplit(maxsplit=1)
 #     if name.lower().startswith('счет'):
@@ -27,4 +31,3 @@ def get_date(date: str) -> str:
     и возвращает строку с датой в формате "ДД.ММ.ГГГГ"("11.03.2024").
     """
     return f"{date[8:10]}.{date[5:7]}.{date[0:4]}"
-
