@@ -1,4 +1,7 @@
-def filter_by_state(list_state: list, state: str = "EXECUTED") -> list:
+from typing import Union
+
+
+def filter_by_state(list_state: list[dict[str, str]], state: str = "EXECUTED") -> list[dict[str, str]]:
     """
     принимает список словарей и опционально значение для ключа state(по умолчанию
     'EXECUTED'). Функция возвращает новый список словарей, содержащий только те словари,
@@ -22,7 +25,7 @@ def filter_by_state(list_state: list, state: str = "EXECUTED") -> list:
     return new_list
 
 
-def sort_by_date(list_state: list, reverse: bool = True) -> list:
+def sort_by_date(list_state: list[dict[str, Union[str | int]]], reverse: bool = True) -> list:
     """
     принимает список словарей и необязательный параметр, задающий порядок сортировки
     (по умолчанию — убывание). Функция должна возвращать новый список, отсортированный

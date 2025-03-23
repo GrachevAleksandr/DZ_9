@@ -1,8 +1,10 @@
+from typing import Union, Collection
+
 import pytest
 
 
 @pytest.fixture
-def list_state() -> list[dict]:
+def list_state() -> list[dict[str, Union[int | str]]]:
     """список для тестов"""
     return [
         {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -13,7 +15,7 @@ def list_state() -> list[dict]:
 
 
 @pytest.fixture
-def transactions() -> list[dict]:
+def transactions() -> list[dict[str, int | Collection[str]]]:
     """список для тестов"""
     return [
         {

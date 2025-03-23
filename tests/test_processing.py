@@ -1,5 +1,5 @@
 import pytest
-from mypy.types import AnyType
+from typing import Union
 
 from src.processing import filter_by_state, sort_by_date
 
@@ -16,7 +16,9 @@ from src.processing import filter_by_state, sort_by_date
         )
     ],
 )
-def test_filter_by_state_executed(list_state: list[AnyType], state: str, expected: list[AnyType]) -> None:
+def test_filter_by_state_executed(
+    list_state: list[dict[str, str]], state: str, expected: list[dict[str, str]]
+) -> None:
     assert filter_by_state(list_state) == expected
 
 
@@ -49,7 +51,9 @@ def test_filter_by_state_invalid_none() -> None:
         )
     ],
 )
-def test_sort_by_date(list_state: list[AnyType], reverse: bool, expected: list[AnyType]) -> None:
+def test_sort_by_date(
+    list_state: list[dict[str, Union[int | str]]], reverse: bool, expected: list[dict[str, Union[int | str]]]
+) -> None:
     assert sort_by_date(list_state) == expected
 
 
@@ -67,8 +71,10 @@ def test_sort_by_date(list_state: list[AnyType], reverse: bool, expected: list[A
         )
     ],
 )
-def test_sort_by_date_false(list_state: list[AnyType], reverse: bool, expected: list[AnyType]) -> None:
-    assert sort_by_date(list_state,False) == expected
+def test_sort_by_date_false(
+    list_state: list[dict[str, Union[int | str]]], reverse: bool, expected: list[dict[str, Union[int | str]]]
+) -> None:
+    assert sort_by_date(list_state, False) == expected
 
 
 def test_sort_by_date_invalid() -> None:
