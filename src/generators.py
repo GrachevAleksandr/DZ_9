@@ -7,8 +7,9 @@ def filter_by_currency(transactions: list[dict], currency_type: str) -> list[dic
      :return: Функция должна возвращать итератор, который поочередно выдает транзакции,
      где валюта операции соответствует заданной (например, USD).
     """
+    transactions_iter = iter(transactions)
     return list(
-        i for i in transactions if currency_type == i.get("operationAmount", {}).get("currency", {}).get("code")
+        i for i in transactions_iter if currency_type == i.get("operationAmount", {}).get("currency", {}).get("code")
     )
 
 
