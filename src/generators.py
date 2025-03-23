@@ -1,25 +1,23 @@
 from typing import Iterator
 
 
-def filter_by_currency(transactions: list[dict], currency_type: str) -> list[dict]:
+def filter_by_currency(transactions: list[dict], currency_type: str) -> Iterator[list[tuple]]:
     """
     которая принимает на вход список словарей, представляющих транзакции.
-     :return: Функция должна возвращать итератор, который поочередно выдает транзакции,
-     где валюта операции соответствует заданной (например, USD).
+    :return: Функция должна возвращать итератор, который поочередно выдает транзакции,
+    где валюта операции соответствует заданной (например, USD).
     """
-    transactions_iter = iter(transactions)
-    return list(
-        i for i in transactions_iter if currency_type == i.get("operationAmount", {}).get("currency", {}).get("code")
-    )
+    for item in transactions:
+        if item["operationAmount"]["currency"]["code"] == currency_type:
+            yield item
 
 
-def transaction_descriptions(transactions: list[dict], key: str = "description") -> Iterator[str]:
+def transaction_descriptions(transactions: list[dict[str, str]], key: str = "description") -> Iterator[str]:
     """
     Функция возвращает список описаний транзакций
     """
-    list_transactions = transactions
     description = ""
-    for x in list_transactions:
+    for x in transactions:
         descript = description + x["description"]
         yield str(descript)
 
