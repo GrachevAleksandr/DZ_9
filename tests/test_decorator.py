@@ -14,6 +14,7 @@ def my_function(x: int | str, y: int | str) -> int:
         print("Ошибка ввода! Пожалуйста, вводите только целые числа.")
         raise e
 
+
 def test_log_save_file() -> None:
     positive_result = my_function(2, 2)
     assert positive_result == 4
