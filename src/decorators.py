@@ -17,7 +17,7 @@ def log(filename):
                 else:
                     print(f"{func.__name__} ok")
                 return result
-            except TypeError as e:
+            except Exception as e:
                 if filename is not None:
                     with open(filename, "a") as file:
                         file.write(f"{func.__name__} error: {e}. Inputs: {args}, {kwargs}")
