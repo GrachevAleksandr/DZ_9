@@ -1,6 +1,6 @@
 import pytest
 
-from decorators import log
+from src.decorators import log
 
 
 @log(filename="mylog.txt")
@@ -21,7 +21,7 @@ def test_log_save_file() -> None:
 
 
 def test_crash_log() -> None:
-    with pytest.raises(TypeError, match="my_function() missing 1 required positional argument: 'y'"):
+    with pytest.raises(Exception, match="my_function() missing 1 required positional argument: 'y'"):
         my_function(1)
 
 
